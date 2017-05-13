@@ -1,0 +1,200 @@
+@import "bower_components/bootstrap/dist/css/bootstrap.min.css";
+/* --------------------------------------
+   Preloader
+   -------------------------------------- */
+.preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: 2;
+  transition: 1s all;
+  opacity: 1;
+  visibility: visible;
+}
+
+.loader {
+  width: 75px;
+  height: 75px;
+  border: 10px solid white;
+  border-radius: 50%;
+  border-top-color: grey;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  animation: 2s spin infinite linear;
+}
+
+@keyframes spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+.done {
+  opacity: 0;
+  visibility: hidden;
+ }
+
+/* --------------------------------------
+   Global Styles
+   -------------------------------------- */
+body {
+  background-color: white;
+  padding-top: 70px;
+  color: #000;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  color: #3f444e;
+  font-weight: 700;
+}
+
+a {
+  color: black;
+}
+a:hover {
+  color: #29c5e6;
+}
+.active {
+  background-color: #29c5e6;
+}
+
+/* --------------------------------------
+   Layout
+   -------------------------------------- */
+
+.post {
+  border: 1px solid #e6e6e6;
+  border-radius: 3px;
+  margin-right: 1px;
+  margin-bottom: 50px;
+}
+.profile_image_small {
+  float: left;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.post_header {
+  padding: 15px;
+}
+
+.post_header:after {
+  visibility: hidden;
+  display: block;
+  content: "";
+  clear: both;
+  height: 0;
+}
+
+.post_header span {
+float: right;
+}
+.post_content {
+  width: 100%;
+  height: 100%;
+}
+
+.heart {
+  width: 25px;
+  height: 25px;
+  background: url('images/hearth.png');
+  background-repeat: no-repeat;
+}
+.post_footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+section.post_footer > div.row {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+}
+.post_footer input {
+  font-size: 14px;
+  line-height: 17px;
+  background: 0 0;
+  border: none;
+  color: #262626;
+  outline: none;
+  width: 100%;
+}
+
+
+/* --------------------------------------
+   Typography
+   -------------------------------------- */
+
+
+
+/* --------------------------------------
+   Navbar
+   -------------------------------------- */
+.navbar-header {
+  height: 70px;
+}
+div.navbar-header,
+div.container-fluid {
+  background-color: white;
+}
+
+div.collapse.navbar-collapse {
+  background-color: white;
+  border-radius: 5px 5px 0px 0px;
+}
+.navbar-brand {
+  font-size: 18px;
+  font-weight: 700;
+}
+a.navbar-brand {
+  padding: 10px;
+  margin-left: 5px;
+}
+.navbar-nav i:hover {
+  color: #d8232a;
+}
+div.logo-png {
+  background: url('images/logo1.png');
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+}
+.brand {
+  padding: 10px;
+  font-size: 20px;
+}
+.search {
+  margin-top: 10px;
+  padding: 10px;
+}
+
+
+
+/* --------------------------------------
+   Carousel
+   -------------------------------------- */
+
+
+/* --------------------------------------
+   Media Queries
+   -------------------------------------- */
+
+/* Portrait & landscape phone */
+@media (max-width: 480px) {
+
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+
+}
+
+/* Large desktop */
+@media (min-width: 1200px) {
+
+}

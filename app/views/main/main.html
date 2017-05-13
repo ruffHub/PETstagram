@@ -1,0 +1,26 @@
+<p>This is the partial for view 1.</p>
+<div class="row">
+  <div class="col-sm-offset-3 col-sm-6 col-xs-12">
+    <div  ng-repeat="post in main.posts | limitTo: 15">
+      <article class="post">
+        <div class="post_header">
+          <a href=""><img class="profile_image_small" ng-src="{{post.thumbnailUrl}}" alt=""/></a>
+          <span>Publish date</span>
+        </div>
+        <img class="post_content" ng-src="{{post.url}}"/>
+        <section class="post_footer">
+          <span>Просмотры</span>
+          <div class="comments">
+          </div>
+          <hr>
+          <div class="row">
+            <div class="heart col-xs-2"></div>
+            <div class="col-xs-10">
+              <input type="text">
+            </div>
+          </div>
+        </section>
+      </article>
+    </div>
+  </div>
+</div>
