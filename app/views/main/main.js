@@ -4,7 +4,8 @@
 angular.module('myApp.main', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/main', {
+  $routeProvider
+      .when('/main', {
       // resolve: {
       //     "check": function ($rootScope, $location) {
       //             if(!$rootScope.loggedIn) {
@@ -12,10 +13,15 @@ angular.module('myApp.main', ['ngRoute'])
       //             }
       //         }
       //     },
-      templateUrl: 'views/main/main.html',
-      controller: 'mainCtrl',
-      controllerAs: 'main'
-  });
+          templateUrl: 'views/main/main.html',
+          controller: 'mainCtrl',
+          controllerAs: 'main'
+      })
+      .when('/post', {
+          templateUrl: 'views/main/post.html',
+          controller: 'mainCtrl',
+          controllerAs: 'main'
+      });
 }])
 
 .controller('mainCtrl', ['$location', '$routeParams', 'mainService', function($location ,$routeParams, mainService) {
