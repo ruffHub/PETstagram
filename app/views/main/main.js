@@ -6,13 +6,13 @@ angular.module('myApp.main', ['ngRoute'])
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider
       .when('/main', {
-      // resolve: {
-      //     "check": function ($rootScope, $location) {
-      //             if(!$rootScope.loggedIn) {
-      //                 $location.path('/login');
-      //             }
-      //         }
-      //     },
+          resolve: {
+              "check": function ($rootScope, $location) {
+                      if(!$rootScope.loggedIn) {
+                          $location.path('/login');
+                      }
+                  }
+              },
           templateUrl: 'views/main/main.html',
           controller: 'mainCtrl',
           controllerAs: 'main'
