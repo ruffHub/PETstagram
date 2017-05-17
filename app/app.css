@@ -1,4 +1,4 @@
-@import "bower_components/bootstrap/dist/css/bootstrap.min.css";
+@import "/bower_components/bootstrap/dist/css/bootstrap.min.css";
 /* --------------------------------------
    Preloader
    -------------------------------------- */
@@ -44,24 +44,24 @@
 /* --------------------------------------
    Global Styles
    -------------------------------------- */
-body {
-  background-color: white;
+body,
+ng-view {
+  background-color: #fafafa;
   padding-top: 70px;
   color: #000;
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
-  color: #3f444e;
   font-weight: 700;
 }
-
+div.wrapper > div.container-fluid,
+/*.container-fluid,*/
+/*.wrapper,*/
+/*.background,*/
+.row {
+  background-color: #fafafa;
+}
 a {
   color: black;
-}
-a:hover {
-  color: #29c5e6;
-}
-.active {
-  background-color: #29c5e6;
 }
 
 /* --------------------------------------
@@ -69,6 +69,7 @@ a:hover {
    -------------------------------------- */
 
 .post {
+  background-color: white;
   border: 1px solid #e6e6e6;
   border-radius: 3px;
   margin-right: 1px;
@@ -114,6 +115,9 @@ section.post_footer > div.row {
   padding-left: 15px;
   padding-right: 15px;
   padding-bottom: 15px;
+}
+.post div{
+  background-color:  white;
 }
 .post_footer input {
   font-size: 14px;
@@ -171,6 +175,10 @@ div.logo-png {
 .search {
   margin-top: 10px;
   padding: 10px;
+}
+input.search {
+  background-color: #fafafa;
+  border: solid 1px #dbdbdb;
 }
 
 

@@ -1,10 +1,12 @@
+<div class="background">
 <p>This is the partial for view 1.</p>
 <div class="row">
   <div class="col-sm-offset-3 col-sm-6 col-xs-12">
-    <div  ng-repeat="post in main.posts | limitTo: 15">
+    <div ng-repeat="post in main.posts | limitTo: main.postsCount">
       <article class="post">
         <div class="post_header">
-          <a href=""><img class="profile_image_small" ng-src="{{post.thumbnailUrl}}" alt=""/></a>
+          <a href="https://jsonplaceholder.typicode.com/photos/{{$index + 1}}"><img class="profile_image_small" ng-src="{{post.thumbnailUrl}}" alt=""/></a>
+          https://jsonplaceholder.typicode.com/photos/{{$index + 1}}
           <span>Publish date</span>
         </div>
         <img class="post_content" ng-src="{{post.url}}"/>
@@ -23,4 +25,10 @@
       </article>
     </div>
   </div>
+</div>
+<div class="row">
+  <div>
+    <button type="button" ng-click="main.showMorePosts()">Show more</button>
+  </div>
+</div>
 </div>

@@ -10,7 +10,7 @@ angular.module('myApp', [
 
 .config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix('!');
-  $routeProvider.otherwise({redirectTo: '/login'});
+  $routeProvider.otherwise({redirectTo: '/main'});
 }])
 
 .service('mainService', ['$http', function ($http) {
@@ -18,8 +18,8 @@ angular.module('myApp', [
         getPosts: function () {
             return $http.get('https://jsonplaceholder.typicode.com/photos/');
         },
-        getCurrentPost: function () {
-            return $http.get('https://jsonplaceholder.typicode.com/photos/');
+        getCurrentPost: function (i) {
+            return $http.get('https://jsonplaceholder.typicode.com/photos/' + i);
         }
     };
 }]);

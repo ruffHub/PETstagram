@@ -1,7 +1,13 @@
-<form action="/login" id="myLogin">
-  Username: <input type="text" id="username" placeholder="Username" ng-model="login.username"><br>
-  Password: <input type="password" id="password" placeholder="Password" ng-model="login.password"><br>
-  <button type="button" ng-click="login.submit()">Login</button>
-</form>
-<br>
-<p style="color: red">Login & Pass: admin</p>
+<div class="background">
+  <div class="row">
+    <div class="col-xs-12">
+      <form action="/login" id="myLogin">
+        Username: <input type="text" id="username" placeholder="Username" ng-model="login.username"><br>
+        Password: <input type="password" id="password" placeholder="Password" ng-model="login.password"><br>
+        <button type="button" ng-click="login.submit()">Login</button>
+      </form>
+      <br>
+      <p style="color: red">Login & Pass: admin</p>
+    </div>
+  </div>
+</div>

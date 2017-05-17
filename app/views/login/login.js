@@ -14,13 +14,10 @@ angular.module('myApp.login', ['ngRoute'])
     });
 }])
 
-.controller('loginCtrl', ['$scope', '$location', function($scope, $location) {
-
+.controller('loginCtrl', ['$rootScope', '$location', function($rootScope, $location) {
     this.submit = function () {
-        // var uname = $scope.username;
-        // var password = $scope.password;
-
     if(this.username === 'admin' && this.password === 'admin') {
+        $rootScope.loggedIn = true;
         $location.path('/main')
     } else {
         alert('Wrong!');
