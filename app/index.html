@@ -1,13 +1,17 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<!--[if lt IE 7]>
+<html lang="en" ng-app="app" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html lang="en" ng-app="app" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" ng-app="app" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="app" class="no-js"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <!-- Website Title & Description for Search Engine purposes -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>PETstagram</title>
+  <link rel="icon" href="images/logo.png">
   <meta name="description" content="PETstagram">
   <link rel="icon" href="images/logo1.png">
   <!-- Mobile viewport optimized -->
@@ -28,8 +32,8 @@
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 <div id="page-preloader" class="preloader">
-        <div class="loader">
-        </div>
+  <div class="loader">
+  </div>
 </div>
 <header>
   <nav class="navbar navbar-default navbar-fixed-top">
@@ -57,6 +61,7 @@
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#!/main">Main<span class="sr-only">(current)</span></a></li>
           <li><a href="#!/profile">Profile</a></li>
+          <li><a href="#!/example">Example</a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
               Dropdown <span class="caret"></span>
@@ -82,6 +87,7 @@
 <!-- In production use:
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
 -->
+<script src="preloader.js" ></script>
 <!-- jQuery JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!-- Bootstrap JS -->
@@ -89,11 +95,21 @@
 <!--AngularJS-->
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
-<script src="preloader.js" ></script>
 <script src="app.js"></script>
-<script src="views/main/main.js"></script>
-<script src="views/profile/profile.js"></script>
-<script src="views/login/login.js"></script>
+<script src="data.service.js"></script>
+<script src="app.routes.js"></script>
+<script src="posts/posts.module.js"></script>
+<script src="posts/posts.controller.js"></script>
+<script src="posts/posts.routes.js"></script>
+<script src="login/login.module.js"></script>
+<script src="login/login.controller.js"></script>
+<script src="login/login.routes.js"></script>
+<script src="profile/profile.module.js"></script>
+<script src="profile/profile.controller.js"></script>
+<script src="profile/profile.routes.js"></script>
+<script src="example/example.module.js"></script>
+<script src="example/example.controller.js"></script>
+<script src="example/example.routes.js"></script>
 <script src="components/version/interpolate-filter.js"></script>
 </body>
 </html>

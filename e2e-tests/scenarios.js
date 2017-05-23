@@ -5,20 +5,20 @@
 describe('my app', function() {
 
 
-  it('should automatically redirect to /main when location hash/fragment is empty', function() {
+  it('should automatically redirect to /posts when location hash/fragment is empty', function() {
     browser.get('index.html');
-    expect(browser.getLocationAbsUrl()).toMatch("/main");
+    expect(browser.getLocationAbsUrl()).toMatch("/posts");
   });
 
 
   describe('main', function() {
 
     beforeEach(function() {
-      browser.get('index.html#!/main');
+      browser.get('index.html#!/posts');
     });
 
 
-    it('should render main when user navigates to /main', function() {
+    it('should render posts when user navigates to /posts', function() {
       expect(element.all(by.css('[ng-view] p')).first().getText()).
         toMatch(/partial for view 1/);
     });
