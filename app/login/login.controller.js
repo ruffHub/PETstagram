@@ -10,21 +10,37 @@
         .controller('loginCtrl', loginCtrl);
 
 
-    loginCtrl.$inject = ['$rootScope', '$location'];
+    loginCtrl.$inject = [
+        '$location',
+        '$sessionStorage'
+    ];
 
     //////////////////////
 
-    function loginCtrl($rootScope, $location) {
+    function loginCtrl($location, $sessionStorage){
+
         this.logInFunc = logInFunc;
 
         function logInFunc() {
             if(this.username === 'admin' && this.password === 'admin') {
-                $rootScope.loggedIn = true;
-                $location.path('/posts')
+                $sessionStorage.loggedIn = true;
+                $location.path('/posts');
+
             } else {
                 alert('Wrong!');
             }
         }
-    };
+    }
 
 })();
+
+// this.logInFunc = logInFunc;
+//
+// function logInFunc() {
+//     if(this.username === 'admin' && this.password === 'admin') {
+//         $rootScope.loggedIn = true;
+//         $location.path('/posts')
+//     } else {
+//         alert('Wrong!');
+//     }
+// }

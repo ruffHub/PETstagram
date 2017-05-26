@@ -17,11 +17,13 @@
   <!-- Mobile viewport optimized -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <!--Fonts-->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <!--<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" >
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" >
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="app.css">
@@ -51,7 +53,7 @@
           </div>
         </a>
         <a href="#!/main" class="navbar-brand">
-          <div class="brand">PETstagram</div>
+          <div class="brand">PETstagram <i class="material-icons">pets</i></div>
         </a>
       </div>
 
@@ -61,7 +63,7 @@
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#!/main">Main<span class="sr-only">(current)</span></a></li>
           <li><a href="#!/profile">Profile</a></li>
-          <li><a href="#!/example">Example</a></li>
+          <li><a href="#!/example"><i class="material-icons">face</i></a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
               Dropdown <span class="caret"></span>
@@ -87,7 +89,9 @@
 <!-- In production use:
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
 -->
+
 <script src="preloader.js" ></script>
+
 <!-- jQuery JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!-- Bootstrap JS -->
@@ -110,6 +114,8 @@
 <script src="example/example.module.js"></script>
 <script src="example/example.controller.js"></script>
 <script src="example/example.routes.js"></script>
-<script src="components/version/interpolate-filter.js"></script>
+<!-- ngStorage JS -->
+<script src="bower_components/ngstorage/ngStorage.js"></script>
+<!--<script src="components/version/interpolate-filter.js"></script>-->
 </body>
 </html>

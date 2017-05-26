@@ -4,13 +4,20 @@
       <div ng-repeat="post in main.posts | limitTo: main.postsCount">
         <article class="post">
           <div class="post_header">
-            <a href="https://jsonplaceholder.typicode.com/photos/{{$index + 1}}"><img class="profile_image_small" ng-src="{{post.thumbnailUrl}}" alt=""/></a>
-            https://jsonplaceholder.typicode.com/photos/{{$index + 1}}
+
+            <img
+                 class="profile_image_small"
+                 ng-src="{{post.thumbnailUrl}}"
+                 alt=""
+            />
+            https://jsonplaceholder.typicode.com/photos/{{post.id}}
             <span>Publish date</span>
           </div>
-          <img class="post_content" ng-src="{{post.url}}"/>
+          <a href="#!/post" ng-click="main.downloadCurrentPostFn(post.id)">
+            <img class="post_content" ng-src="{{post.url}}"/>
+          </a>
           <section class="post_footer">
-            <span>Просмотры</span>
+            <span>Просмотры</span><span>{{main.postId}}</span>
             <div class="comments">
             </div>
             <hr>
@@ -27,7 +34,9 @@
   </div>
   <div class="row">
     <div>
-      <button type="button" ng-click="main.showMorePostsFunc()">Show more</button>
+      <a href="">
+        <i class="material-icons" ng-click="main.showMorePostsFunc()">autorenew</i>
+      </a>
     </div>
   </div>
 </div>

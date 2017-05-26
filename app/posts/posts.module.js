@@ -3,7 +3,8 @@
 
     angular
         .module('app.posts', [
-            'ngRoute'
+            'ngRoute',
+            'ngStorage'
         ])
 
 })();

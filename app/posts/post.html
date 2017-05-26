@@ -1,0 +1,28 @@
+<div class="background">
+  <div class="row">
+    <div class="col-sm-offset-3 col-sm-6 col-xs-12">
+      <div>
+        <article class="post">
+          <div class="post_header">
+            <img class="profile_image_small" ng-src="{{main.currentPost.thumbnailUrl}}" alt=""/>
+              https://jsonplaceholder.typicode.com/photos/{{main.currentPost.id}}
+            <span>Publish date</span>
+          </div>
+          <img class="post_content" ng-src="{{main.currentPost.url}}"/>
+          <section class="post_footer">
+            <span>Просмотры ({{2 + 3}})</span>
+            <div class="comments">
+            </div>
+            <hr>
+            <div class="row">
+              <div class="heart col-xs-2"></div>
+              <div class="col-xs-10">
+                <input type="text">
+              </div>
+            </div>
+          </section>
+        </article>
+      </div>
+    </div>
+  </div>
+</div>

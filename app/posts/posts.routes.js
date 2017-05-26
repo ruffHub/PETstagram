@@ -8,7 +8,7 @@
         .module('app.posts')
         .config(config);
 
-    checkAuth.$inject = ['$rootScope', '$location'];
+    checkAuth.$inject = ['$location', '$sessionStorage'];
 
     /////////////////
 
@@ -16,21 +16,24 @@
         $routeProvider
             .when('/posts', {
                 resolve: {
-                    // checkAuth: checkAuth
+                    checkAuth: checkAuth
                 },
                 templateUrl: 'posts/posts.html',
                 controller: 'MainCtrl',
                 controllerAs: 'main'
             })
             .when('/post', {
-                templateUrl: 'views/posts/posts.html',
+                resolve: {
+                    checkAuth: checkAuth
+                },
+                templateUrl: 'posts/post.html',
                 controller: 'MainCtrl',
                 controllerAs: 'main'
             });
     };
 
-    function checkAuth($rootScope, $location) {
-        if(!$rootScope.loggedIn) {
+    function checkAuth($location, $sessionStorage) {
+        if(!$sessionStorage.loggedIn) {
             $location.path('/login');
         }
     };

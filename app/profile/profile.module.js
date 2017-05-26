@@ -3,7 +3,8 @@
 
     angular
         .module('app.profile', [
-            'ngRoute'
+            'ngRoute',
+            'ngStorage'
         ])
 
 })();

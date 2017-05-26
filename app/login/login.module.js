@@ -6,7 +6,8 @@
 
     angular
         .module('app.login', [
-            'ngRoute'
+            'ngRoute',
+            'ngStorage'
         ])
 
 

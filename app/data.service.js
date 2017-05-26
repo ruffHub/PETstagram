@@ -27,6 +27,7 @@
         function getCurrentPost(i) {
             return $http.get('https://jsonplaceholder.typicode.com/photos/' + i);
         };
+
     }
 
 
