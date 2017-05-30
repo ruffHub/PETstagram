@@ -1,13 +1,59 @@
-<div class="background">
-  <div class="row">
-    <div class="col-xs-12">
-      <form action="/login" id="myLogin">
-        Username: <input type="text" id="username" placeholder="Username" ng-model="login.username"><br>
-        Password: <input type="password" id="password" placeholder="Password" ng-model="login.password"><br>
-        <button type="button" ng-click="login.logInFunc()">Login</button>
-      </form>
-      <br>
-      <p style="color: red">Login & Pass: admin</p>
+<div class="login-background">
+<video poster="images/video-poster.jpg" id="bgvid" playsinline autoplay loop>
+  <source src="video/dog_2.webm" type="video/webm">
+</video>
+<div class="login-form-block">
+  <form class="form-horizontal" role="form" action="/login">
+
+    <div class="form-group">
+      <label class="sr-only" for="username">Email</label>
+      <input
+              type="text"
+              class="form-control"
+              id="username"
+              placeholder="Username"
+              ng-model="login.username">
     </div>
-  </div>
+
+    <div class="form-group">
+      <label class="sr-only" for="password">Пароль</label>
+      <input
+              type="password"
+             class="form-control"
+             id="password"
+             placeholder="Password"
+             ng-model="login.password">
+    </div>
+
+    <div class="checkbox">
+      <label>
+        <input type="checkbox"> Запомнить меня
+      </label>
+    </div>
+    <button type="button" class="btn btn-default" ng-click="login.logInFunc()">Login</button>
+  </form>
+  <br>
+  <p style="color: red">Login & Pass: admin</p>
+
 </div>
+</div>
+
+<!--<div class="login-background">-->
+  <!--<video loop muted autoplay poster="images/video-poster.jpg" class="background-video">-->
+    <!--&lt;!&ndash;<source src="video/dog.webm" type="video/webm">&ndash;&gt;-->
+    <!--<source src="video/dog_2.webm" type="video/webm">-->
+  <!--</video>-->
+  <!--<div class="login">-->
+    <!--<h1>Log In</h1>-->
+    <!--<p>-->
+      <!--Lorem ipsum dolor sit amet, consectetur adipiscing elit.-->
+    <!--</p>-->
+    <!--<form action="/login">-->
+      <!--Username: <input type="text" id="username" placeholder="Username" ng-model="login.username"><br>-->
+      <!--Password: <input type="password" id="password" placeholder="Password" ng-model="login.password"><br>-->
+      <!--<button type="button" ng-click="login.logInFunc()">Login</button>-->
+    <!--</form>-->
+    <!--<br>-->
+    <!--<p style="color: red">Login & Pass: admin</p>-->
+  <!--</div>-->
+<!--</div>-->

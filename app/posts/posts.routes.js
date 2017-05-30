@@ -9,6 +9,8 @@
         .config(config);
 
     checkAuth.$inject = ['$location', '$sessionStorage'];
+    postsPrepareFunc.$inject = ['dataService'];
+    currentPostPrepareFunc.$inject = ['dataService'];
 
     /////////////////
 
@@ -16,7 +18,8 @@
         $routeProvider
             .when('/posts', {
                 resolve: {
-                    checkAuth: checkAuth
+                    checkAuth: checkAuth,
+                    postsPrepareFunc: postsPrepareFunc
                 },
                 templateUrl: 'posts/posts.html',
                 controller: 'MainCtrl',
@@ -24,7 +27,8 @@
             })
             .when('/post', {
                 resolve: {
-                    checkAuth: checkAuth
+                    checkAuth: checkAuth,
+                    currentPostPrepareFunc: currentPostPrepareFunc
                 },
                 templateUrl: 'posts/post.html',
                 controller: 'MainCtrl',
@@ -36,6 +40,14 @@
         if(!$sessionStorage.loggedIn) {
             $location.path('/login');
         }
-    };
+    }
+
+    function postsPrepareFunc(dataService) {
+        return dataService.getPosts();
+    }
+
+    function currentPostPrepareFunc(dataService, id) {
+        return dataService.getCurrentPost(id);
+    }
 
 })();

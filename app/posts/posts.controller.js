@@ -9,40 +9,30 @@
         .controller('MainCtrl', MainCtrl);
 
 
-    MainCtrl.$inject = ['$routeParams', 'dataService', '$http'];
+    MainCtrl.$inject = ['$routeParams', 'postsPrepareFunc'];
 
     /////////////////
 
-    function MainCtrl($routeParams, dataService) {
+    function MainCtrl($routeParams, postsPrepareFunc) {
         var self = this;
-        this.posts = [];
+        this.posts = postsPrepareFunc.data;
         this.currentPost = [];
-        this.postsCount = 15;
+        this.postsCount = 10;
         this.postId = $routeParams.postId;
         this.showMorePostsFunc = showMorePostsFunc;
         this.downloadCurrentPostFn = downloadCurrentPostFn;
 
-        downloadPostsFn();
 
         ///////////////
 
-        function downloadPostsFn() {
-            return dataService.getPosts().then(function(response) {
-                self.posts = response.data;
-            });
-        };
-
         function showMorePostsFunc() {
-            self.postsCount += 15
-        };
-
-        function downloadCurrentPostFn(id) {
-            return dataService.getCurrentPost(id).then(function(response) {
-                self.currentPost = response.data;
-                console.log(self.currentPost);
-            });
+            self.postsCount += 10
         }
 
+        function downloadCurrentPostFn(postId) {
+            var postId = postId;
+            console.log(postId);
+        }
 
     }
 

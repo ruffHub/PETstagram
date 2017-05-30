@@ -24,8 +24,8 @@
             return $http.get('https://jsonplaceholder.typicode.com/photos/');
         };
 
-        function getCurrentPost(i) {
-            return $http.get('https://jsonplaceholder.typicode.com/photos/' + i);
+        function getCurrentPost(id) {
+            return $http.get('https://jsonplaceholder.typicode.com/photos/' + id);
         };
 
     }

@@ -20,6 +20,7 @@
     function loginCtrl($location, $sessionStorage){
 
         this.logInFunc = logInFunc;
+        this.logOutFunc = logOutFunc;
 
         function logInFunc() {
             if(this.username === 'admin' && this.password === 'admin') {
@@ -30,6 +31,11 @@
                 alert('Wrong!');
             }
         }
+
+         function logOutFunc() {
+             $sessionStorage.loggedIn = false;
+             $location.path('/login');
+         }
     }
 
 })();
