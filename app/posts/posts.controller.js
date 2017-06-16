@@ -8,32 +8,25 @@
         .module('app.posts')
         .controller('MainCtrl', MainCtrl);
 
-
-    MainCtrl.$inject = ['$routeParams', 'postsPrepareFunc'];
+    MainCtrl.$inject = ['dataPrepareFunc'];
 
     /////////////////
 
-    function MainCtrl($routeParams, postsPrepareFunc) {
+    function MainCtrl(dataPrepareFunc) {
         var self = this;
-        this.posts = postsPrepareFunc.data;
-        this.currentPost = [];
+        this.posts = dataPrepareFunc;
         this.postsCount = 10;
-        this.postId = $routeParams.postId;
         this.showMorePostsFunc = showMorePostsFunc;
-        this.downloadCurrentPostFn = downloadCurrentPostFn;
-
-
-        ///////////////
+        this.setCurrentPostFn = setCurrentPostFn;
 
         function showMorePostsFunc() {
             self.postsCount += 10
         }
 
-        function downloadCurrentPostFn(postId) {
-            var postId = postId;
-            console.log(postId);
+        function setCurrentPostFn(post) {
+            self.currentPost = post;
+            console.log(self.currentPost);
         }
 
     }
-
 })();

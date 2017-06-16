@@ -4,29 +4,26 @@
       <div ng-repeat="post in main.posts | limitTo: main.postsCount">
         <article class="post">
           <div class="post_header">
-
-            <img
-                 class="profile_image_small"
-                 ng-src="{{post.thumbnailUrl}}"
-                 alt=""
-            />
-            https://jsonplaceholder.typicode.com/photos/{{post.id}}
-            <span>Publish date</span>
+            {{post.id}}
+            <img class="profile_image_small" ng-src="{{post.picture}}" alt=""/>
+            <span>{{post.published}}</span>
+            <span>{{$index}}</span>
           </div>
-          <a href="#!/post" ng-click="main.downloadCurrentPostFn(post.id)">
-            <img class="post_content" ng-src="{{post.url}}"/>
+          <a >
+            <img class="post_content" ng-src="{{post.picture}}" ng-click="main.setCurrentPostFn(post)">
           </a>
           <section class="post_footer">
-            <span>Просмотры</span><span>{{main.postId}}</span>
+            <span>Просмотры</span>
             <div class="comments">
             </div>
             <hr>
             <div class="row">
               <div class="heart col-xs-2"></div>
               <div class="col-xs-10">
-                <input type="text">
+                <comments></comments>
               </div>
             </div>
+
           </section>
         </article>
       </div>

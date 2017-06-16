@@ -9,8 +9,7 @@
         .config(config);
 
     checkAuth.$inject = ['$location', '$sessionStorage'];
-    postsPrepareFunc.$inject = ['dataService'];
-    currentPostPrepareFunc.$inject = ['dataService'];
+    dataPrepareFunc.$inject = ['dataService'];
 
     /////////////////
 
@@ -19,7 +18,7 @@
             .when('/posts', {
                 resolve: {
                     checkAuth: checkAuth,
-                    postsPrepareFunc: postsPrepareFunc
+                    dataPrepareFunc: dataPrepareFunc
                 },
                 templateUrl: 'posts/posts.html',
                 controller: 'MainCtrl',
@@ -27,8 +26,7 @@
             })
             .when('/post', {
                 resolve: {
-                    checkAuth: checkAuth,
-                    currentPostPrepareFunc: currentPostPrepareFunc
+                    checkAuth: checkAuth
                 },
                 templateUrl: 'posts/post.html',
                 controller: 'MainCtrl',
@@ -42,12 +40,8 @@
         }
     }
 
-    function postsPrepareFunc(dataService) {
+    function dataPrepareFunc(dataService) {
         return dataService.getPosts();
-    }
-
-    function currentPostPrepareFunc(dataService, id) {
-        return dataService.getCurrentPost(id);
     }
 
 })();

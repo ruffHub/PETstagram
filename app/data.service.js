@@ -9,26 +9,30 @@
         .factory('dataService', dataService);
 
 
-    dataService.$inject = ['$http'];
+    dataService.$inject = ['Restangular'];
 
     /////////////
 
-    function dataService($http) {
+    function dataService(Restangular) {
+
         var factory = {
             getPosts: getPosts,
-            getCurrentPost: getCurrentPost
+            getPostsList: getPostsList
+            //,sendComment: sendComment
         };
         return factory;
 
         function getPosts() {
-            return $http.get('https://jsonplaceholder.typicode.com/photos/');
-        };
+            return Restangular.all('').getList();
+        }
 
-        function getCurrentPost(id) {
-            return $http.get('https://jsonplaceholder.typicode.com/photos/' + id);
-        };
+        function getPostsList() {
+            return Restangular.all('').getList();
+        }
+        // function sendComment(comment) {
+        //     return $http.post('url', comment);
+        // };
 
     }
-
 
 })();

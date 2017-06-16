@@ -1,0 +1,16 @@
+<!--  Comment Form -->
+  <div ng-repeat="comment in post.comments | limitTo:10 ">
+    {{comment.body}}
+  </div>
+  <form name="commentsForm">
+    <fieldset class="form-group">
+      <input
+             type="text"
+             ng-model="vm.comment.body"
+             placeholder="write your comment here..."
+      >
+    </fieldset>
+    <fieldset class="form-group">
+      <input type="submit" class="btn btn-primary pull-right" value="Comment" ng-click="vm.addCommentFn(post)"/>
+    </fieldset>
+  </form>

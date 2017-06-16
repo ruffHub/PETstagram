@@ -9,6 +9,7 @@
         .config(config);
 
     checkAuth.$inject = ['$location', '$sessionStorage'];
+    dataPrepareFun.$inject = ['dataService'];
 
     /////////////////
 
@@ -16,7 +17,8 @@
         $routeProvider
             .when('/example', {
                 resolve: {
-                    checkAuth: checkAuth
+                    checkAuth: checkAuth,
+                    dataPrepareFun: dataPrepareFun
                 },
                 templateUrl: 'example/example.html',
                 controller: 'ExampleCtrl',
@@ -29,5 +31,8 @@
             $location.path('/login');
         }
     };
+    function dataPrepareFun(dataService) {
+        return dataService.getPostsList();
+    }
 
 })();

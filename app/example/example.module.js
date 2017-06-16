@@ -7,7 +7,8 @@
     angular
         .module('app.example', [
             'ngRoute',
-            'ngStorage'
+            'ngStorage',
+            'restangular'
         ])
 
 })();

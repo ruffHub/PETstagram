@@ -11,9 +11,8 @@
   <!-- Website Title & Description for Search Engine purposes -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>PETstagram</title>
-  <link rel="icon" href="images/logo.png">
   <meta name="description" content="PETstagram">
-  <link rel="icon" href="images/logo1.png">
+  <link rel="icon" href="images/logo.png">
   <!-- Mobile viewport optimized -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <!--Fonts-->
@@ -22,9 +21,12 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" >
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
+  <!-- bower:css -->
+  <!-- endbower -->
+
+  <!--&lt;!&ndash; Bootstrap CSS &ndash;&gt;-->
+  <!--<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" >-->
+  <!--<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">-->
   <!-- Custom CSS -->
   <link rel="stylesheet" href="app.css">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
@@ -89,22 +91,28 @@
 <!-- In production use:
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
 -->
-
+<!-- PreloaderJS -->
 <script src="preloader.js" ></script>
-
 <!-- jQuery JS -->
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap JS -->
 <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-<!--AngularJS-->
+<!-- AngularJS -->
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
+<!-- Restangular and Lodash -->
+<script src="bower_components/lodash/dist/lodash.js"></script>
+<script src="bower_components/restangular/dist/restangular.js"></script>
+<!-- bower:js -->
+<!-- endbower -->
+<!-- ScriptsJS -->
 <script src="app.js"></script>
 <script src="data.service.js"></script>
 <script src="app.routes.js"></script>
 <script src="posts/posts.module.js"></script>
 <script src="posts/posts.controller.js"></script>
 <script src="posts/posts.routes.js"></script>
+<script src="posts/comments.directive.js"></script>
 <script src="login/login.module.js"></script>
 <script src="login/login.controller.js"></script>
 <script src="login/login.routes.js"></script>
@@ -117,6 +125,5 @@
 <!-- ngStorage JS -->
 <script src="bower_components/ngstorage/ngStorage.js"></script>
 
-<!--<script src="components/version/interpolate-filter.js"></script>-->
 </body>
 </html>

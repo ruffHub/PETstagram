@@ -4,15 +4,15 @@
       <div>
         <article class="post">
           <div class="post_header">
-            <img class="profile_image_small" ng-src="{{main.currentPost.thumbnailUrl}}" alt=""/>
-              https://jsonplaceholder.typicode.com/photos/{{main.currentPost.id}}
+            <img class="profile_image_small" ng-src="{{main.currentPost.picture}}" alt=""/>
             <span>Publish date</span>
           </div>
-          <img class="post_content" ng-src="{{main.currentPost.url}}"/>
+          <img class="post_content" ng-src="{{main.currentPost.picture}}"/>
           <section class="post_footer">
             <span>Просмотры ({{2 + 3}})</span>
             <div class="comments">
             </div>
+              {{main.posts[0].about}}
             <hr>
             <div class="row">
               <div class="heart col-xs-2"></div>
